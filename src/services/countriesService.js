@@ -6,7 +6,8 @@ const getAllCountriesInfo = async () => {
     try {
       // use data destructuring to get data from the promise object
      const res = await axios.get(API_URL);
-     return res;
+     if(res.data !== undefined){
+     return res.data};
     } catch (error) {
       console.log(error);
     }
